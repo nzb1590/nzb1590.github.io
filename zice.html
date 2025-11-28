@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>男性能力自测</title>
+    <style>
+        /* 整体样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "微软雅黑", sans-serif;
+        }
+        body {
+            background-color: #f5f5f5;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        /* 标题样式 */
+        h2 {
+            color: #333;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        h3 {
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        /* 自测题样式 */
+        .question {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .option {
+            margin: 8px 0;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background 0.2s;
+        }
+        .option:hover {
+            background-color: #f0f8ff;
+        }
+        .option input {
+            margin-right: 8px;
+        }
+        /* 表单区域样式 */
+        .form-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        /* 按钮样式 */
+        .submit-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 10px;
+            transition: background 0.2s;
+        }
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+        .submit-btn:disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+        }
+        /* 提示样式 */
+        .success-tip {
+            color: #28a745;
+            margin-top: 15px;
+            text-align: center;
+            display: none;
+            font-size: 16px;
+        }
+        /* 响应式适配手机 */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            .question h3 {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>男性能力自测</h2>
+        
+        <!-- 自测题区域 -->
+        <div class="quiz-section">
+            <!-- 问题1 -->
+            <div class="question">
+                <h3>1. 你目前是时间段还是硬度差？</h3>
+                <div class="option">
+                    <input type="radio" name="q1" id="q1-1" value="时间段" required>
+                    <label for="q1-1">时间段</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="q1" id="q1-2" value="硬度差">
+                    <label for="q1-2">硬度差</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="q1" id="q1-3" value="两者都有">
+                    <label for="q1-3">两者都有</label>
+                </div>
+            </div>
+
+            <!-- 问题2 -->
+            <div class="question">
+                <h3>2. 您目前性生活能坚持几分钟？</h3>
+                <div class="option">
+                    <input type="radio" name="q2" id="q2-1" value="3分钟以内" required>
+                    <label for="q2-1">3分钟以内</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="q2" id="q2-2" value="10分钟以内">
+                    <label for="q2-2">10分钟以内</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="q2" id="q2-3" value="10分钟以上">
+                    <label for="q2-3">10分钟以上</label>
+                </div>
+            </div>
+
+            <!-- 问题3 -->
+            <div class="question">
+                <h3>3. 您的渤起情况？</h3>
+                <div class="option">
+                    <input type="radio" name="q4" id="q4-1" value="硬度不太好" required>
+                    <label for="q4-1">硬度不太好</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="q4" id="q4-2" value="半途疲软">
+                    <label for="q4-2">半途疲软</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="q4" id="q4-3" value="完全无法渤起">
+                    <label for="q4-3">完全无法渤起</label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="q4" id="q4-3" value="硬度满意">
+                    <label for="q4-3">硬度满意</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- 表单填写区域（直接在问答下方） -->
+        <div class="form-section">
+            <h3 style="margin-bottom: 15px;">请完善你的信息</h3>
+            <form id="infoForm">
+                <div class="form-group">
+                    <label for="phone">手机号码</label>
+                    <input type="tel" id="phone" name="phone" placeholder="请填写你的手机号码" required>
+                </div>
+                <div class="form-group">
+                    <label for="name">你的称呼</label>
+                    <input type="text" id="name" name="name" placeholder="如：王经理/李哥" required>
+                </div>
+                <button type="submit" class="submit-btn" id="submitAll">提交获取老师指导</button>
+                <div class="success-tip" id="successTip">✅ 信息提交成功！我们会尽快联系你</div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // 获取元素
+        const infoForm = document.getElementById('infoForm');
+        const successTip = document.getElementById('successTip');
+        const submitBtn = document.getElementById('submitAll');
+
+        // 提交所有信息（问答+表单）
+        infoForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // 阻止默认提交
+
+            // 1. 检查所有自测题是否回答
+            const q1 = document.querySelector('input[name="q1"]:checked');
+            const q2 = document.querySelector('input[name="q2"]:checked');
+            const q3 = document.querySelector('input[name="q3"]:checked');
+            
+            if (!q1 || !q2 || !q3) {
+                alert('请先回答所有自测问题！');
+                return;
+            }
+
+            // 2. 验证表单信息
+            const phone = document.getElementById('phone').value.trim();
+            const name = document.getElementById('name').value.trim();
+
+            // 手机号格式验证
+            if (!/^1[3-9]\d{9}$/.test(phone)) {
+                alert('请填写正确的11位手机号码！');
+                return;
+            }
+
+            // 称呼验证
+            if (!name || name.length < 2) {
+                alert('请填写有效的称呼（至少2个字）！');
+                return;
+            }
+
+            // 3. 模拟提交数据（实际使用时替换为真实接口）
+            const submitData = {
+                // 自测题答案
+                quizAnswers: {
+                    q1: q1.value,
+                    q2: q2.value,
+                    q3: q3.value
+                },
+                // 表单信息
+                userInfo: {
+                    phone: phone,
+                    name: name
+                }
+            };
+            console.log('提交的数据：', submitData);
+
+            // 4. 提交成功反馈
+            successTip.style.display = 'block';
+            submitBtn.disabled = true; // 禁用按钮防止重复提交
+
+            // 5. 5秒后重置表单（可选）
+            setTimeout(function() {
+                infoForm.reset();
+                successTip.style.display = 'none';
+                submitBtn.disabled = false;
+                // 取消所有单选框选中状态
+                document.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
+            }, 5000);
+        });
+
+        // 自动填充手机号（可选：仅微信环境支持，需对接公众号JSSDK）
+        window.onload = function() {
+            const phoneInput = document.getElementById('phone');
+            // 检测是否为微信浏览器
+            if (/(MicroMessenger)/i.test(navigator.userAgent)) {
+                phoneInput.placeholder = "微信用户可点击授权获取手机号（需配置JSSDK）";
+                // 如需实现微信自动获取手机号，需对接微信公众号开发接口，此处仅提示
+            }
+        };
+    </script>
+</body>
+</html>
